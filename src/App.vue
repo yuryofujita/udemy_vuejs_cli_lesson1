@@ -2,8 +2,11 @@
 <div>
 <LikeHeader></LikeHeader>
 <p>{{number/2}}</p>
-<LikeNumber v-bind:number="number"></LikeNumber>
-<LikeNumber v-bind:number="6"></LikeNumber>
+<!-- 
+    v-on:my-click="number=$event"→子コンポーネントからの情報をnumberに入れる。
+ -->
+<LikeNumber v-bind:total-number="number" v-on:my-click="number=$event"></LikeNumber>
+<LikeNumber v-bind:total-number="number" test-props="test"></LikeNumber>
 </div>
 </template>
 
