@@ -1,7 +1,18 @@
 <template>
 <div>
-<LikeHeader></LikeHeader>
-<p>{{number/2}}</p>
+<LikeHeader>
+    <h2>みなさん</h2>
+    <template v-slot:title="slotProps">
+        <h2>こんにちは</h2>
+        <h2>{{slotProps}}</h2>
+        <h2>{{slotProps.user.firstName}}</h2>
+    </template>
+    <h3>初めまして</h3>
+    <p>よろしくお願いいたします。</p>
+    <template v-slot:number>
+        <h2>{{number}}</h2>
+    </template>
+</LikeHeader>
 <!-- 
     v-on:my-click="number=$event"→子コンポーネントからの情報をnumberに入れる。
  -->
